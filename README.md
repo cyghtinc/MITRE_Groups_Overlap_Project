@@ -1,5 +1,3 @@
-# MITRE_Groups_Overlap_Project
-
 # MITRE Groups Overlap Project
 
 A Python tool to measure the similarity between threat actor groups based on the MITRE ATT&CK techniques they use.
