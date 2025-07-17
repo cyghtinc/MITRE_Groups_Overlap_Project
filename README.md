@@ -1,124 +1,137 @@
 # MITRE_Groups_Overlap_Project
 
+# MITRE Groups Overlap Project
+
 A Python tool to measure the similarity between threat actor groups based on the MITRE ATT&CK techniques they use.
 
-🔍 Overview
+---
+
+## 🔍 Overview
+
 This script retrieves data from the MITRE ATT&CK website, analyzes the attack techniques used by different groups, and calculates overlap percentages. It then generates:
 
-A detailed comparison report (screen + output file)
+- A detailed comparison report (screen + output file)
+- A separate list of group pairs with ≥85% similarity (for the group with fewer techniques)
 
-A separate list of group pairs with ≥85% similarity (for the group with fewer techniques)
+---
 
-📋 Features
-Pairwise or bulk comparison:
+## 📋 Features
 
-Compare specific groups you choose
+- **Pairwise or bulk comparison**:  
+  - Compare specific groups you choose  
+  - Automatically compare all groups in the dataset
 
-Automatically compare all groups in the dataset
+- **Outputs include**:  
+  - Percent overlap  
+  - Common techniques  
+  - Unique techniques  
+  - List of high-similarity group pairs (≥85% threshold)
 
-Outputs include:
+---
 
-Percent overlap
+## 🚀 Getting Started
 
-Common techniques
+### Prerequisites
 
-Unique techniques
-
-List of high-similarity group pairs (≥85% threshold)
-
-🚀 Getting Started
-Prerequisites
-Python 3.9+
-
-Libraries:
-
-pandas
-
-requests
-
-beautifulsoup4
-
-json
-
-os
+- **Python 3.9+**  
+- Libraries:
+  - `pandas`
+  - `requests`
+  - `beautifulsoup4`
+  - `json`
+  - `os`
 
 Install them via:
 
-bash
-Copy
-Edit
+```bash
 pip install pandas requests beautifulsoup4
-🧰 Installation
-Clone this repository:
+```
 
-bash
-Copy
-Edit
-git clone https://github.com/cyghtinc/MITRE_Groups_Overlap_Project.git
-cd MITRE_Groups_Overlap_Project
-Ensure dependencies are installed (see prerequisites).
+---
 
-⚙️ Usage
+### 🧰 Installation
+
+1. Clone this repository:
+    ```bash
+    git clone https://github.com/cyghtinc/MITRE_Groups_Overlap_Project.git
+    cd MITRE_Groups_Overlap_Project
+    ```
+2. Ensure dependencies are installed (see prerequisites).
+
+---
+
+## ⚙️ Usage
+
 Run the main script:
 
-bash
-Copy
-Edit
+```bash
 python compare_groups.py
+```
+
 You'll be prompted to choose:
 
-Specific groups – enter group names (from the included Groups file or MITRE ATT&CK)
+1. **Specific groups** – enter group names (from the included `Groups` file or MITRE ATT&CK)  
+2. **All groups** – automatically compare every group available
 
-All groups – automatically compare every group available
+### Outputs
 
-Outputs
-Comparison results: shown in console and saved as output_<timestamp>.json
+- **Comparison results**: shown in console and saved as `output_<timestamp>.json`  
+- **High similarity report**: `high_similarity_pairs_<timestamp>.json` (≥85%)
 
-High similarity report: high_similarity_pairs_<timestamp>.json (≥85%)
+---
 
-🛠️ Example
-Choose option 1 and enter:
+## 🛠️ Example
 
-Copy
-Edit
-APT28, FIN7
-Output shows:
+1. Choose option 1 and enter:
+   ```
+   APT28, FIN7
+   ```
+2. Output shows:
+   - % overlap  
+   - List of shared techniques  
+   - Unique techniques for each group  
+3. If similarity ≥85%, it's saved in the high-similarity report.
 
-% overlap
+---
 
-List of shared techniques
+## 📅 Configuration
 
-Unique techniques for each group
-
-If similarity ≥85%, it's saved in the high-similarity report.
-
-📅 Configuration
 You can customize:
 
-Similarity threshold (default: 85%) – change at top of script
+- Similarity threshold (default: 85%) – change at top of script
+- Output directory – adjust in `compare_groups.py`
+- Input groups list – edit the provided `Groups` file
 
-Output directory – adjust in compare_groups.py
+---
 
-Input groups list – edit the provided Groups file
+## ❓ Troubleshooting
 
-❓ Troubleshooting
-MITRE website downtime: script may fail to download data
+- **MITRE website downtime**: script may fail to download data  
+- **Missing libraries**: install via `pip install …`  
+- **Unique file names**: timestamps prevent overwriting
 
-Missing libraries: install via pip install …
+---
 
-Unique file names: timestamps prevent overwriting
+## 📝 Contributing
 
-📝 Contributing
 Feel free to submit issues or PRs—happy to improve:
 
-Add CLI arguments
+- Add CLI arguments  
+- Support more output formats  
+- Parallelize large comparisons
 
-Support more output formats
+---
 
-Parallelize large comparisons
+## 📄 License
 
-📄 License
-This project is released under the MIT License.
+This project is released under the **MIT License**.
+
+---
+
+## 📧 Contact
+
+For questions or feedback, reach out to the author at `your-email@example.com`.
+
 
 
 
